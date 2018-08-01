@@ -1,0 +1,9 @@
+<ion-view view-title="Lot Data">
+  <ion-content class="padding">
+    <h2>{{lot.name}}</h2>
+    <span>Street Address: {{lot.street_address}}</span>
+    <span>Spaces available: {{lot.available_spaces}}</span>
+    <button type="button" name="button" ng-click="startNavigation()">Start Navigation</button>
+    <div id="smallmap" data-tap-disabled="true"></div>
+  </ion-content>
+</ion-view>

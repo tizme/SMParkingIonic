@@ -1,0 +1,17 @@
+<ion-view view-title="Lots">
+  <ion-content>
+    <h2>Santa Monic Public Parking</h2>
+      <a ng-repeat="lot in lots" ui-sref="data({ lotId: $index})">
+        <button class="longbutton" ng-if="lot.name=='Pier Deck'||lot.name=='Beach House Lot'" style="background-color: lightblue;" ion-button full>
+         <p>{{lot.name}}</p>
+         <p>Spaces availavle: {{lot.available_spaces}}</p>
+         <p>{{lot.street_address}}</p>
+       </button>
+       <button class="longbutton" ng-if="lot.name!='Pier Deck'&&lot.name!='Beach House Lot'" style="background-color: red;" ion-button full>
+        <p>{{lot.name}}</p>
+        <p>Spaces availavle: {{lot.available_spaces}}</p>
+        <p>{{lot.street_address}}</p>
+      </button>
+     </a>
+  </ion-content>
+</ion-view>
