@@ -2,6 +2,7 @@ angular.module('starter.controllers', [])
 
 .controller('LotsCtrl', function($scope, $state, $stateParams, $http, $rootScope) {
   console.log('dash opened');
+  $rootScope.capacity = {"Beach House Lot": 250, "Structure 1": 350, "Structure 2": 700, "Structure 3": 500, "Structure 4": 700, "Structure 5": 650, "Structure 6": 700, "Structure 9": 300, "Lot 8 North": 200, "Lot 3 North": 450, "Lot 1 North": 1100, "Pier Deck": 250, "Lot 4 South": 700, "Lot 5 South": 800, "Civic Center": 700, "Library": 500, "Structure 7": 800, "Structure 8": 1000}
   $http({
     method: 'GET',
     url: 'https://parking.api.smgov.net/lots',
@@ -9,6 +10,9 @@ angular.module('starter.controllers', [])
   }).success(function(res){
     console.log('res', res);
     $scope.lots = res;
+    $scope.capacity = $rootScope.capacity
+    console.log('lots are', $scope.lots);
+    console.log("capacities are", $rootScope.capacity);
     $rootScope.lots = res;
   }).error(function(err){
     console.log(err);

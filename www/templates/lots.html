@@ -4,12 +4,12 @@
       <a ng-repeat="lot in lots" ui-sref="data({ lotId: $index})">
         <button class="longbutton" ng-if="lot.name=='Pier Deck'||lot.name=='Beach House Lot'" style="background-color: lightblue;" ion-button full>
          <p>{{lot.name}}</p>
-         <p>Spaces availavle: {{lot.available_spaces}}</p>
+         <p>Spaces availavle: <span ng-if="lot.available_spaces/capacity[lot.name] <= .25" style="color: yellow;" >{{lot.available_spaces}}</span> <span ng-if="lot.available_spaces/capacity[lot.name] > .25" style="color: green;" >{{lot.available_spaces}}</span></p>
          <p>{{lot.street_address}}</p>
        </button>
        <button class="longbutton" ng-if="lot.name!='Pier Deck'&&lot.name!='Beach House Lot'" style="background-color: red;" ion-button full>
         <p>{{lot.name}}</p>
-        <p>Spaces availavle: {{lot.available_spaces}}</p>
+        <p>Spaces availavle: <span ng-if="lot.available_spaces/capacity[lot.name] <= .25" style="color: yellow;" >{{lot.available_spaces}}</span> <span ng-if="lot.available_spaces/capacity[lot.name] > .25" style="color: green;" >{{lot.available_spaces}}</span></p>
         <p>{{lot.street_address}}</p>
       </button>
      </a>
